@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, chakra, Menu, MenuButton, MenuItem, MenuList, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, chakra, Menu, MenuButton, MenuItem, MenuList, useColorModeValue, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
@@ -30,13 +30,16 @@ const Navbar = () => {
     <Box
       as="nav"
       display="flex"
-      flexDir={{ base: "row-reverse", lg: "row" }}
+      flexDir="row"
       alignItems="center"
+      justifyContent="space-between" // Ensures that the logo and menu items are spaced apart
       fontWeight="500"
+      w="100%" // Ensure the nav takes full width
     >
       <HamburgerMenu toggled={isOpen} toggle={setIsOpen} />
-      <chakra.ul
-        bg={{ base: bg, lg: "transparent" }}
+      <Flex align="center" flex={1}>
+        <chakra.ul
+          bg={{ base: bg, lg: "transparent" }}
         color={{ base: "black", lg: color }}
         display={{
           base: isOpen ? "block" : "none",
@@ -79,22 +82,20 @@ const Navbar = () => {
             </NextLink>
           </chakra.li>
         ))}
-      </chakra.ul>
-      <ColorModeToggle />
+        </chakra.ul>
 
-      <Box display={{ base: "none", lg: "block" }} ml="auto">
         <NextLink href="/se-connecter" passHref>
-          <Button as="a" variant="ghost" onClick={closeMenu}>
+          <Button as="a" variant="ghost" onClick={closeMenu} mr={2}>
             SE CONNECTER
           </Button>
         </NextLink>
         <NextLink href="/s-inscrire" passHref>
-          <Button as="a" variant="ghost" onClick={closeMenu}>
+          <Button as="a" variant="ghost" onClick={closeMenu} mr={2}>
             S'INSCRIRE
           </Button>
         </NextLink>
         <Menu>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="ghost">
+          <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="ghost" mr={2}>
             LANGUE
           </MenuButton>
           <MenuList>
@@ -104,9 +105,10 @@ const Navbar = () => {
             {/* ... other languages */}
           </MenuList>
         </Menu>
-      </Box>
 
+      </Flex>
 
+      <ColorModeToggle />
     </Box>
   );
 };
