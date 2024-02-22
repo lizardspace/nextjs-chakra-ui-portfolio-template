@@ -16,7 +16,10 @@ const Header = () => {
         maxW={MAX_WIDTH}
         mx="auto"
       >
-        <Logo />
+        {/* Adjust the size of the logo and push it to the left */}
+        <Box ml="-300px" >
+          <Logo />
+        </Box>
         <Navbar />
       </Box>
     </Box>
