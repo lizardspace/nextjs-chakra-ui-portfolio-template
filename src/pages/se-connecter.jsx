@@ -8,6 +8,7 @@ import {
     Text,
     Link,
     useColorModeValue,
+    Flex,
   } from '@chakra-ui/react';
   import { FaFacebook, FaGoogle } from 'react-icons/fa';
   
@@ -16,8 +17,14 @@ import {
     const buttonColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Box p={8} maxWidth="400px" borderWidth={1} borderRadius={8} boxShadow="lg">
-        <Text fontSize="2xl" textAlign="center" mb={8}>CONNEXION</Text>
+      <Flex
+        minHeight="100vh" // Minimum height of the viewport height
+        width="full" // Full width
+        align="center" // Aligns vertically
+        justifyContent="center" // Aligns horizontally
+      >
+        <Box p={8} maxWidth="400px" borderWidth={1} borderRadius={8} boxShadow="lg">
+          <Text fontSize="2xl" textAlign="center" mb={8}>CONNEXION</Text>
         <Stack spacing={4}>
           <FormControl isRequired>
             <FormLabel>Adresse email</FormLabel>
@@ -46,7 +53,8 @@ import {
             <Link color={buttonBg}>Créer un compte</Link>
           </Stack>
         </Stack>
-      </Box>
+        </Box>
+      </Flex>
     );
   }
   
