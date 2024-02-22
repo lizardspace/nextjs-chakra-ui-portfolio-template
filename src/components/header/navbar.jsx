@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Box, chakra, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, chakra, Menu, MenuButton, MenuItem, MenuList, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { ChevronDownIcon } from '@chakra-ui/icons';
 
 import HamburgerMenu from "../UI/hamburgerMenu";
 import ColorModeToggle from "../UI/colorModeToggle";
@@ -79,8 +80,33 @@ const Navbar = () => {
           </chakra.li>
         ))}
       </chakra.ul>
-
       <ColorModeToggle />
+
+      <Box display={{ base: "none", lg: "block" }} ml="auto">
+        <NextLink href="/se-connecter" passHref>
+          <Button as="a" variant="ghost" onClick={closeMenu}>
+            SE CONNECTER
+          </Button>
+        </NextLink>
+        <NextLink href="/s-inscrire" passHref>
+          <Button as="a" variant="ghost" onClick={closeMenu}>
+            S'INSCRIRE
+          </Button>
+        </NextLink>
+        <Menu>
+          <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="ghost">
+            LANGUE
+          </MenuButton>
+          <MenuList>
+            {/* Add MenuItems for each language */}
+            <MenuItem onClick={closeMenu}>Français</MenuItem>
+            <MenuItem onClick={closeMenu}>English</MenuItem>
+            {/* ... other languages */}
+          </MenuList>
+        </Menu>
+      </Box>
+
+
     </Box>
   );
 };
