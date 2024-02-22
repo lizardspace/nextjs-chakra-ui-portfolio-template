@@ -63,7 +63,65 @@ import {
           </Select>
         </FormControl>
   
-        <FormControl id="actions" isRequired>
+        <Flex wrap="wrap" justifyContent="space-between">
+  <FormControl id="address" isRequired>
+    <FormLabel>Adresse</FormLabel>
+    <Input placeholder="Enter a location" />
+  </FormControl>
+  
+  <Flex direction="column" flex="1">
+    <FormControl id="number" isRequired>
+      <FormLabel>N°</FormLabel>
+      <Input placeholder="Numéro" />
+    </FormControl>
+    <FormControl id="street" isRequired>
+      <FormLabel>Rue</FormLabel>
+      <Input placeholder="Rue" />
+    </FormControl>
+  </Flex>
+  
+  <Flex direction="column" flex="1">
+    <FormControl id="city" isRequired>
+      <FormLabel>Ville</FormLabel>
+      <Input placeholder="Ville" />
+    </FormControl>
+    <FormControl id="zipcode" isRequired>
+      <FormLabel>Code postal</FormLabel>
+      <Input placeholder="Code postal" />
+    </FormControl>
+  </Flex>
+  
+  <FormControl id="country" isRequired>
+    <FormLabel>Pays</FormLabel>
+    <Select placeholder="Sélectionnez votre pays">
+      {/* options go here */}
+    </Select>
+  </FormControl>
+</Flex>
+
+<FormControl id="phone" isRequired>
+  <FormLabel>Téléphone</FormLabel>
+  <Input placeholder="Votre numéro de téléphone" type="tel" />
+</FormControl>
+
+<FormControl id="password" isRequired>
+  <FormLabel>Mot de passe</FormLabel>
+  <Input placeholder="Mot de passe" type="password" />
+</FormControl>
+
+<FormControl id="confirm-password" isRequired>
+  <FormLabel>Confirmer le mot de passe</FormLabel>
+  <Input placeholder="Confirmez votre mot de passe" type="password" />
+</FormControl>
+
+<FormControl id="partners-offers">
+  <Checkbox>J'accepte de recevoir des offres de la part des partenaires de Fideojoy</Checkbox>
+</FormControl>
+
+<Box display="none">
+  <Input placeholder="If you are a human, ignore this field" />
+</Box>
+<FormControl id="actions" isRequired>
           <Checkbox>Être jeune Au Pair dans une famille</Checkbox>
         </FormControl>
   
@@ -76,10 +134,10 @@ import {
         <FormControl id="newsletter" isRequired>
           <Checkbox>J'accepte de recevoir la newsletter Fidelejoy</Checkbox>
         </FormControl>
-  
-        <Button mt={4} colorScheme="blue" type="submit">
-          S'inscrire
-        </Button>
+
+<Button mt={4} colorScheme="blue" type="submit">
+  S'inscrire
+</Button>
       </Box>
     );
   }
