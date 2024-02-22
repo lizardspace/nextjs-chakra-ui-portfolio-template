@@ -15,6 +15,16 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const menuItems = [
+    { title: "Accueil", href: "/" },
+    { title: "Jeunes 12-17 Ans", href: "/jeunes-12-17-ans" },
+    { title: "+18 Ans & Au Pair", href: "/plus-18-ans-au-pair" },
+    { title: "Familles", href: "/familles" },
+    { title: "Adultes & Pros", href: "/adultes-pros" },
+    { title: "FAQ", href: "/faq" },
+    { title: "Blog", href: "/blog" },
+  ];
+
   return (
     <Box
       as="nav"
@@ -42,25 +52,22 @@ const Navbar = () => {
         boxShadow={{ base: "xl", lg: "none" }}
         zIndex="2"
       >
-        <chakra.li
-          listStyleType="none"
-          px={{ lg: "8" }}
-          py={{ base: "3", lg: "0" }}
-        >
-          <NextLink href="/">
-            <a onClick={closeMenu}>Home</a>
-          </NextLink>
-        </chakra.li>
-
-        <chakra.li
-          listStyleType="none"
-          px={{ lg: "8" }}
-          py={{ base: "3", lg: "0" }}
-        >
-          <NextLink href="/blog">
-            <a onClick={closeMenu}>Blog</a>
-          </NextLink>
-        </chakra.li>
+        {menuItems.map((item, index) => (
+          <chakra.li
+            key={index}
+            listStyleType="none"
+            px={{ lg: "8" }}
+            py={{ base: "3", lg: "0" }}
+            fontSize={{ base: "sm", lg: "md" }} // Adjust font size here
+            overflow="hidden"
+            whiteSpace="nowrap"
+            textOverflow="ellipsis"
+          >
+            <NextLink href={item.href}>
+              <a onClick={closeMenu}>{item.title}</a>
+            </NextLink>
+          </chakra.li>
+        ))}
       </chakra.ul>
 
       <ColorModeToggle />
