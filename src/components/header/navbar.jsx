@@ -84,7 +84,7 @@ const Navbar = () => {
         ))}
         </chakra.ul>
 
-        <NextLink href="/seconnecter" passHref>
+        <NextLink href="/se-connecter" passHref>
           <Button as="a" variant="ghost" onClick={closeMenu} mr={2}>
             SE CONNECTER
           </Button>
