@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { title: "Accueil", href: "/" },
+    { title: "Accueil", href: "/fideojoycomponent" },
     { title: "Jeunes 12-17 Ans", href: "/jeunes-12-17-ans" },
     { title: "+18 Ans & Au Pair", href: "/plus-18-ans-au-pair" },
     { title: "Familles", href: "/familles" },
@@ -84,7 +84,7 @@ const Navbar = () => {
         ))}
         </chakra.ul>
 
-        <NextLink href="/se-connecter" passHref>
+        <NextLink href="/seconnecter" passHref>
           <Button as="a" variant="ghost" onClick={closeMenu} mr={2}>
             SE CONNECTER
           </Button>

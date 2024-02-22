@@ -57,7 +57,7 @@ const Home = () => {
         />
         <Box>
           <Heading as="h1" fontSize="2xl" fontWeight="500" py="2">
-            Hi, I'm John Doe{" "}
+          FIDEOJOY : RÉSEAU CATHOLIQUE D'AU PAIR ET D'ÉCHANGES LINGUISTIQUES
             <span role="img" aria-label="hand">
               👋🏻
             </span>
