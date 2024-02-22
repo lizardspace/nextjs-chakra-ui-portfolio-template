@@ -64,7 +64,17 @@ const Navbar = () => {
             textOverflow="ellipsis"
           >
             <NextLink href={item.href}>
-              <a onClick={closeMenu}>{item.title}</a>
+              <chakra.a
+                onClick={closeMenu}
+                _hover={{
+                  fontWeight: "bold",
+                  color: "pink.500",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+              >
+                {item.title}
+              </chakra.a>
             </NextLink>
           </chakra.li>
         ))}
